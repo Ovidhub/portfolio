@@ -1,5 +1,7 @@
 # Developer Portfolio (Laravel)
 
+[![CI](https://github.com/Ovidhub/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Ovidhub/portfolio/actions/workflows/ci.yml)
+
 A server-rendered, SEO-optimized web developer portfolio built with **Laravel 11**,
 **Blade**, **Tailwind CSS v4** and **Alpine.js**, backed by a database with a full
 admin panel for managing content.

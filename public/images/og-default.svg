@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#1a3c2a"/>
+  <circle cx="980" cy="150" r="220" fill="#f5a623" opacity="0.85"/>
+  <circle cx="120" cy="560" r="160" fill="#2d5a3d"/>
+  <g transform="translate(96,250)">
+    <circle cx="40" cy="40" r="40" fill="#f5a623"/>
+    <g fill="none" stroke="#1a3c2a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="48 28 62 40 48 52"/>
+      <polyline points="32 28 18 40 32 52"/>
+    </g>
+  </g>
+  <text x="96" y="400" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" fill="#ffffff">Web Developer</text>
+  <text x="96" y="480" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="500" fill="#f5a623">Full-Stack &#183; Portfolio</text>
+</svg>

@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-script: 'Dancing Script', cursive;
+
+    /* Brand palette */
+    --color-brand: #1a3c2a;
+    --color-brand-light: #2d5a3d;
+    --color-brand-dark: #142e21;
+    --color-accent: #f5a623;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+}
+
+.font-script {
+    font-family: var(--font-script);
+}
+
+/* Marquee animation (replaces framer-motion) */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 22s linear infinite;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* Scroll-reveal: only hide content when JS is active (progressive enhancement).
+   Without JS the `js` class is never added, so all content stays visible. */
+html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+}
+
+html.js [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.js [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .animate-marquee,
+    .animate-spin-slow,
+    .animate-float,
+    .animate-float-delayed {
+        animation: none;
+    }
+}

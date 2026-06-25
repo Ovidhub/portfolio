@@ -31,7 +31,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['TypeScript', 'Laravel', 'Blade', 'E-Commerce'],
                 'icon' => 'shopping-cart',
                 'color' => 'from-purple-500 to-pink-500',
-                'link' => '#',
+                'link' => 'https://hechimaterial.online/',
                 'github' => 'https://github.com/Ovidhub/Material-Tool-Ecommerce',
             ],
             [
@@ -71,7 +71,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['Laravel', 'TypeScript', 'HTML', 'SEO'],
                 'icon' => 'code',
                 'color' => 'from-slate-600 to-slate-800',
-                'link' => '#',
+                'link' => 'https://de-ebrightmarn.com/',
                 'github' => 'https://github.com/Ovidhub/company-profile',
             ],
         ];

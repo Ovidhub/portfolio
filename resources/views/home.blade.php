@@ -15,7 +15,7 @@
             'description' => $settings->about_bio,
             'email' => 'mailto:' . $settings->email,
             'url' => url('/'),
-            'image' => $settings->hero_image ?: null,
+            'image' => $settings->hero_image ? (\Illuminate\Support\Str::startsWith($settings->hero_image, ['http://', 'https://']) ? $settings->hero_image : url($settings->hero_image)) : null,
             'address' => ['@type' => 'PostalAddress', 'addressLocality' => $settings->location],
             'sameAs' => collect($settings->socials ?? [])->pluck('url')->values()->all(),
         ],

@@ -6,7 +6,9 @@
     $metaDescription = $decode($__env->yieldContent('meta_description', $settings->meta_description ?: $settings->hero_intro));
     $canonical = $decode($__env->yieldContent('canonical', url()->current()));
     $ogType = $decode($__env->yieldContent('og_type', 'website'));
-    $ogImage = $decode($__env->yieldContent('og_image', $settings->og_image ?: asset('images/og-default.svg')));
+    $ogImage = $decode($__env->yieldContent('og_image', $settings->og_image ?: '/images/og-default.svg'));
+    // Social scrapers require absolute URLs — promote relative paths to absolute.
+    $ogImage = \Illuminate\Support\Str::startsWith($ogImage, ['http://', 'https://']) ? $ogImage : url($ogImage);
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">

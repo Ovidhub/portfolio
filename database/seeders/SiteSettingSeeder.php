@@ -16,8 +16,8 @@ class SiteSettingSeeder extends Seeder
             'tagline' => 'Full-Stack Developer',
             'hero_intro' => "I'm a full-stack web developer based in Nigeria, helping businesses and startups build fast, secure and SEO-friendly websites and web applications that rank on Google and turn visitors into customers.",
             'about_bio' => "I'm Daniel Efegoma, a passionate full-stack web developer based in Nigeria with a strong focus on building modern, high-performing websites and web applications. I work with technologies like React, Next.js, Laravel and Node.js to deliver fast, secure and SEO-friendly digital products. From e-commerce stores to custom web apps and APIs, I help businesses and startups across Nigeria and beyond turn ideas into reliable software that drives real, measurable results.",
-            'hero_image' => null,
-            'about_image' => null,
+            'hero_image' => '/images/daniel-hero.png',
+            'about_image' => '/images/daniel-about.png',
             'cv_path' => null,
             'stat_projects' => '50+',
             'stat_clients' => '30+',
@@ -34,7 +34,7 @@ class SiteSettingSeeder extends Seeder
             'meta_title' => 'Daniel Efegoma — Full-Stack Web Developer in Nigeria',
             'meta_description' => 'Daniel Efegoma is a full-stack web developer in Nigeria building fast, SEO-friendly websites, web apps and APIs with React, Laravel and Node.js. Let\'s work together.',
             'meta_keywords' => 'web developer Nigeria, full-stack developer Nigeria, hire web developer Nigeria, React developer, Laravel developer, Node.js developer, freelance web developer, Daniel Efegoma, website developer, web app developer Nigeria',
-            'og_image' => null,
+            'og_image' => '/images/daniel-about.png',
         ]);
     }
 }

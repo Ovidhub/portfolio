@@ -1,3 +1,9 @@
+databases:
+  - name: daniel-portfolio-db
+    plan: free
+    databaseName: portfolio
+    user: portfolio
+
 services:
   - type: web
     name: daniel-portfolio
@@ -18,14 +24,42 @@ services:
       - key: LOG_CHANNEL
         value: stderr
       - key: SESSION_DRIVER
-        value: file
+        value: database
       - key: CACHE_STORE
-        value: file
+        value: database
       - key: QUEUE_CONNECTION
         value: sync
-      - key: DB_CONNECTION
-        value: sqlite
-      - key: MAIL_MAILER
-        value: log
       - key: PHP_CLI_SERVER_WORKERS
         value: "4"
+      - key: MAIL_MAILER
+        value: log
+
+      # PostgreSQL connection (auto-wired from the managed database above)
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: daniel-portfolio-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: daniel-portfolio-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: daniel-portfolio-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: daniel-portfolio-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: daniel-portfolio-db
+          property: password
+
+      # Admin login (set a strong ADMIN_PASSWORD in the dashboard — never commit it)
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

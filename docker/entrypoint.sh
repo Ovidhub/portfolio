@@ -12,15 +12,16 @@ if [ -n "$RENDER_EXTERNAL_URL" ] && [ -z "$APP_URL" ]; then
     export APP_URL="$RENDER_EXTERNAL_URL"
 fi
 
-# SQLite database. NOTE: Render's free tier has an ephemeral filesystem, so this
-# database is recreated (and re-seeded) on every deploy/restart. Add a persistent
-# disk or a managed database, and remove the auto-seed below, when you need data
-# (contact messages, admin edits) to survive restarts.
-mkdir -p database
-[ -f database/database.sqlite ] || touch database/database.sqlite
+# Ensure the SQLite file exists only when SQLite is the configured driver.
+if [ "${DB_CONNECTION:-sqlite}" = "sqlite" ]; then
+    mkdir -p database
+    [ -f database/database.sqlite ] || touch database/database.sqlite
+fi
 
 php artisan migrate --force
-php artisan db:seed --force
+# Seed only when the database is empty, so existing data (contact messages,
+# admin edits) is preserved across deploys on a persistent database.
+php artisan app:seed-if-empty
 php artisan storage:link 2>/dev/null || true
 php artisan view:cache
 

@@ -10,12 +10,13 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Admin account (credentials shown in README / after setup)
+        // Admin account. Credentials come from env so the real password is never
+        // committed to the repo; defaults are used for local development.
         User::updateOrCreate(
-            ['email' => 'admin@example.com'],
+            ['email' => env('ADMIN_EMAIL', 'admin@example.com')],
             [
                 'name' => 'Site Admin',
-                'password' => Hash::make('password'),
+                'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
             ],
         );
 

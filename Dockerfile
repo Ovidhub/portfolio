@@ -4,8 +4,8 @@ FROM php:8.3-cli-bookworm
 
 # System libraries + PHP extensions required by Laravel + SQLite + zip uploads
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        git unzip libzip-dev libsqlite3-dev libonig-dev \
-    && docker-php-ext-install pdo_sqlite mbstring zip \
+        git unzip libzip-dev libsqlite3-dev libonig-dev libpq-dev \
+    && docker-php-ext-install pdo_sqlite pdo_pgsql mbstring zip \
     && rm -rf /var/lib/apt/lists/*
 
 # Reasonable upload limits for image/CV uploads in the admin panel

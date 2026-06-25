@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['Laravel', 'PHP', 'TypeScript', 'Fintech'],
                 'icon' => 'database',
                 'color' => 'from-emerald-500 to-teal-500',
-                'link' => '#',
+                'link' => 'https://safemonic.com/',
                 'github' => '#', // private repo
             ],
             [
@@ -61,7 +61,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['Laravel', 'PHP', 'JavaScript', 'Fintech'],
                 'icon' => 'bar-chart',
                 'color' => 'from-amber-500 to-orange-500',
-                'link' => '#',
+                'link' => 'https://rubivest.com/',
                 'github' => '#', // private repo
             ],
             [

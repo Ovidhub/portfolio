@@ -23,7 +23,8 @@ class SiteSettingSeeder extends Seeder
             'stat_clients' => '30+',
             'stat_experience' => '5+',
             'email' => 'ovidtech007@gmail.com',
-            'phone' => null,
+            'phone' => '+234 905 671 9522',
+            'whatsapp' => '+234 905 671 9522',
             'address' => 'Nigeria',
             'socials' => [
                 ['platform' => 'GitHub', 'url' => 'https://github.com/Ovidhub'],

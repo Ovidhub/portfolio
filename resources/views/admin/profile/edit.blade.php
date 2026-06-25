@@ -94,6 +94,10 @@
                     <input type="text" name="phone" value="{{ old('phone', $settings->phone) }}" class="{{ $input }}">
                 </div>
                 <div>
+                    <label class="block font-medium text-gray-700 mb-1.5">WhatsApp <span class="text-gray-400 text-sm">(floating chat button)</span></label>
+                    <input type="text" name="whatsapp" value="{{ old('whatsapp', $settings->whatsapp) }}" class="{{ $input }}" placeholder="+234 905 671 9522">
+                </div>
+                <div>
                     <label class="block font-medium text-gray-700 mb-1.5">Address</label>
                     <input type="text" name="address" value="{{ old('address', $settings->address) }}" class="{{ $input }}">
                 </div>

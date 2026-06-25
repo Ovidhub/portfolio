@@ -61,5 +61,6 @@
     </main>
 
     @include('partials.footer')
+    @include('partials.whatsapp')
 </body>
 </html>

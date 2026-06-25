@@ -4,6 +4,12 @@
 @source '../../storage/framework/views/*.php';
 @source '../views';
 
+/* Project gradients and testimonial avatar colours are stored in the database and
+   chosen in the admin panel, so Tailwind can't detect them by scanning source.
+   Safelist the supported palette so any admin selection always renders. */
+@source inline("{from,to}-{emerald,teal,purple,pink,rose,sky,blue,cyan,green,amber,orange,slate}-{400,500,600,700,800}");
+@source inline("bg-{purple,blue,emerald,pink,amber,cyan,red,indigo,green,sky,rose,teal,orange,slate}-500");
+
 @theme {
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';

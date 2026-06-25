@@ -10,46 +10,69 @@ class ProjectSeeder extends Seeder
 {
     public function run(): void
     {
+        // Live demo URLs ("link") and private-repo code links ("github") are left
+        // as '#' so the UI doesn't render dead links. Update them in the admin panel
+        // as projects are deployed or repositories are made public.
         $projects = [
             [
-                'title' => 'E-Commerce Store with Paystack',
-                'description' => 'A full-stack online store with secure Paystack checkout, product management and an admin dashboard, built for a growing Nigerian retail brand.',
-                'body' => "A complete e-commerce platform built for a Nigerian retail business that wanted to sell online without relying on social media DMs. It features a fast product catalogue, cart, and a secure Paystack checkout that supports cards, bank transfers and USSD.\n\nThe storefront is a responsive React application, while the backend is a Laravel API handling orders, inventory and an admin dashboard for managing products and tracking sales. The whole site is optimised for speed and SEO so it ranks for the brand's products and loads quickly even on mobile data.",
-                'tags' => ['React', 'Laravel', 'Paystack', 'MySQL'],
+                'title' => 'Esusu — Digital Savings & Cooperative Platform',
+                'description' => 'A digital esusu and cooperative savings platform that automates group contributions, scheduled payouts and member management for thrift groups.',
+                'body' => "Esusu is a digital take on the traditional African rotating-savings scheme. Members join a savings group, contribute on a set schedule, and receive automated payouts in turn — all tracked transparently in one place.\n\nBuilt with Laravel and TypeScript, the platform handles member onboarding, contribution tracking, automated payout rotation, wallet balances and an admin dashboard for managing groups and reconciling payments. It replaces error-prone manual record-keeping with a secure, auditable system.",
+                'tags' => ['Laravel', 'PHP', 'TypeScript', 'Fintech'],
+                'icon' => 'database',
+                'color' => 'from-emerald-500 to-teal-500',
+                'link' => '#',
+                'github' => '#', // private repo
+            ],
+            [
+                'title' => 'Material Tools E-Commerce Store',
+                'description' => 'A full e-commerce store for building materials and hardware tools, with a product catalogue, cart, secure checkout and an admin dashboard.',
+                'body' => "An online store built for selling building materials and hardware tools. Customers browse a categorised catalogue, search products, manage a cart and check out securely, while the business manages stock and orders from an admin dashboard.\n\nThe frontend is built with TypeScript for a fast, type-safe experience, backed by a Laravel API for products, orders and inventory. It is fully responsive and optimised to perform well on mobile, where most shoppers browse.",
+                'tags' => ['TypeScript', 'Laravel', 'Blade', 'E-Commerce'],
                 'icon' => 'shopping-cart',
                 'color' => 'from-purple-500 to-pink-500',
                 'link' => '#',
-                'github' => '#',
+                'github' => 'https://github.com/Ovidhub/Material-Tool-Ecommerce',
             ],
             [
-                'title' => 'SaaS Booking & Scheduling App',
-                'description' => 'A multi-tenant booking platform with real-time availability, automated reminders and online payments for service businesses.',
-                'body' => "A software-as-a-service booking platform that lets salons, clinics and consultants take appointments online. Customers see real-time availability, book in a few taps, and receive automated email and WhatsApp reminders that cut down on no-shows.\n\nBuilt with Next.js and a Node.js API backed by PostgreSQL, the app supports multiple businesses (multi-tenancy), role-based access and subscription billing. Calendars sync in real time so two customers can never book the same slot.",
-                'tags' => ['Next.js', 'Node.js', 'PostgreSQL', 'TypeScript'],
-                'icon' => 'clipboard-list',
-                'color' => 'from-blue-500 to-cyan-500',
+                'title' => 'Hair Salon & Beauty Store',
+                'description' => 'A modern online hair and beauty shop where customers can browse styles and products and place orders through a clean storefront.',
+                'body' => "An e-commerce storefront for a hair salon and beauty brand. It showcases hairstyles, products and services with a clean, modern design that builds trust and encourages customers to buy online or get in touch.\n\nBuilt as a fast, responsive front-end, the site focuses on strong visual presentation and an easy browsing experience across phones, tablets and desktops.",
+                'tags' => ['HTML', 'CSS', 'JavaScript', 'Responsive'],
+                'icon' => 'palette',
+                'color' => 'from-pink-500 to-rose-500',
                 'link' => '#',
-                'github' => '#',
+                'github' => 'https://github.com/Ovidhub/Hair-Salon',
             ],
             [
-                'title' => 'Business Analytics Dashboard',
-                'description' => 'An analytics dashboard that turns sales and marketing data into clear, interactive charts and exportable reports.',
-                'body' => "An analytics dashboard that pulls data from a business's sales, payments and marketing tools into one clean, interactive view. Decision-makers can spot trends at a glance with charts powered by D3.js and filter by date range, product or channel.\n\nThe Express API aggregates and caches data in Redis for fast load times, and the React frontend offers customisable widgets and one-click report exports. It replaced a tangle of spreadsheets with a single source of truth.",
-                'tags' => ['React', 'Express', 'D3.js', 'Redis'],
+                'title' => 'Cleaning Service Website',
+                'description' => 'A conversion-focused marketing website for a professional cleaning company, designed to showcase services and generate booking enquiries.',
+                'body' => "A marketing website for a professional cleaning company. It presents the company's services, builds credibility and makes it easy for visitors to request a quote or book a cleaning.\n\nThe site is responsive and fast, with a clear layout and strong calls to action that guide visitors toward getting in touch.",
+                'tags' => ['HTML', 'CSS', 'JavaScript', 'Web Design'],
+                'icon' => 'layout',
+                'color' => 'from-sky-500 to-blue-500',
+                'link' => '#',
+                'github' => 'https://github.com/Ovidhub/cleaning-Service',
+            ],
+            [
+                'title' => 'RubiVest — Investment Platform',
+                'description' => 'An investment platform where users register, fund accounts, choose plans and track their returns from a personal dashboard.',
+                'body' => "RubiVest is an online investment platform that lets users sign up, fund their accounts, select investment plans and monitor their returns from a personal dashboard. An admin back office manages users, plans, deposits and withdrawals.\n\nBuilt with Laravel and PHP, it focuses on secure authentication, clear reporting and a smooth experience for managing investments online.",
+                'tags' => ['Laravel', 'PHP', 'JavaScript', 'Fintech'],
                 'icon' => 'bar-chart',
-                'color' => 'from-green-500 to-emerald-500',
-                'link' => '#',
-                'github' => '#',
-            ],
-            [
-                'title' => 'Corporate Website & CMS',
-                'description' => 'A fast, SEO-optimised company website with a custom content management system the team can update themselves.',
-                'body' => "A modern marketing website for a Nigerian company that needed to look professional and rank on Google. It is server-rendered for SEO, scores highly on Core Web Vitals, and loads fast on every device.\n\nBuilt with Laravel and Blade, it ships with a simple custom CMS so the team can edit pages, publish blog posts and manage enquiries without touching code — exactly like the portfolio site you're viewing now.",
-                'tags' => ['Laravel', 'Blade', 'Tailwind CSS', 'SEO'],
-                'icon' => 'code',
                 'color' => 'from-amber-500 to-orange-500',
                 'link' => '#',
-                'github' => '#',
+                'github' => '#', // private repo
+            ],
+            [
+                'title' => 'Corporate Company Profile Website',
+                'description' => 'A professional company profile website presenting a business\'s services, portfolio and contact details with a polished, SEO-friendly design.',
+                'body' => "A corporate website that presents a company's brand, services and portfolio in a professional, trustworthy way. It is structured for clarity and SEO so the business is easy to find and easy to contact.\n\nBuilt with a modern stack, it loads quickly, looks sharp on every device, and gives the company a strong online presence.",
+                'tags' => ['Laravel', 'TypeScript', 'HTML', 'SEO'],
+                'icon' => 'code',
+                'color' => 'from-slate-600 to-slate-800',
+                'link' => '#',
+                'github' => 'https://github.com/Ovidhub/company-profile',
             ],
         ];
 

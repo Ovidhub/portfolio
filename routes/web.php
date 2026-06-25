@@ -31,6 +31,9 @@ Route::get('/blog/{post}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
+// Standalone sales-funnel landing page (content in config/funnel.php)
+Route::view('/funnel', 'funnel.index')->name('funnel');
+
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/robots.txt', [SitemapController::class, 'robots'])->name('robots');
 

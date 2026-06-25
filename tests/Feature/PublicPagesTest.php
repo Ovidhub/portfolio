@@ -58,6 +58,15 @@ class PublicPagesTest extends TestCase
         $this->get('/blog/draft-post')->assertNotFound();
     }
 
+    public function test_funnel_page_renders(): void
+    {
+        $this->get('/funnel')
+            ->assertOk()
+            ->assertSee('REIGNITE')
+            ->assertSee('Stop drifting apart.')
+            ->assertSee('MOST POPULAR');
+    }
+
     public function test_sitemap_and_robots_respond(): void
     {
         Project::create(['title' => 'Sitemap Project', 'slug' => 'sitemap-project', 'description' => 'd']);

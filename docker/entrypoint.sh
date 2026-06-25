@@ -22,6 +22,11 @@ php artisan migrate --force
 # Seed only when the database is empty, so existing data (contact messages,
 # admin edits) is preserved across deploys on a persistent database.
 php artisan app:seed-if-empty
+# Keep the admin login in sync with the ADMIN_PASSWORD env var on every boot,
+# so the password can be set/changed from the dashboard without shell access.
+if [ -n "$ADMIN_PASSWORD" ]; then
+    php artisan app:set-admin-password || true
+fi
 php artisan storage:link 2>/dev/null || true
 php artisan view:cache
 

@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: daniel-portfolio
+    runtime: docker
+    plan: free
+    healthCheckPath: /up
+    autoDeploy: true
+    envVars:
+      - key: APP_NAME
+        value: "Daniel Efegoma"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      # Set this in the Render dashboard (a base64:... value). Required.
+      - key: APP_KEY
+        sync: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: SESSION_DRIVER
+        value: file
+      - key: CACHE_STORE
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: MAIL_MAILER
+        value: log
+      - key: PHP_CLI_SERVER_WORKERS
+        value: "4"

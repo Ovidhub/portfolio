@@ -1,0 +1,16 @@
+.git
+.github
+.idea
+.vscode
+.playwright-mcp
+node_modules
+vendor
+public/build
+public/storage
+storage/logs/*.log
+database/database.sqlite
+.env
+.env.*
+!.env.example
+docs
+README.md

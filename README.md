@@ -95,6 +95,30 @@ The seeder creates an admin account:
 - **Content:** Everything (name, bio, stats, contact details, social links, SEO
   defaults, images, CV) is editable under **Admin → Profile & SEO**.
 
+## Deployment (Render)
+
+This repo ships with a `Dockerfile`, `docker/entrypoint.sh` and a `render.yaml`
+blueprint for one-click deployment on [Render](https://render.com).
+
+1. Push the repo to GitHub (already done).
+2. On Render: **New + → Blueprint**, connect this repository. Render reads
+   `render.yaml` and configures a free Docker web service.
+3. When prompted, set the **`APP_KEY`** environment variable to a value generated
+   with `php artisan key:generate --show` (a `base64:...` string).
+4. Click **Apply / Deploy**. The container builds, runs migrations, seeds the
+   database, caches views and serves the app. Your URL will be
+   `https://<service-name>.onrender.com`.
+
+The entrypoint sets `APP_URL` automatically from Render's external URL, so
+canonical, Open Graph and sitemap links are correct.
+
+> **Free-tier note:** Render's free filesystem is ephemeral, so the SQLite
+> database is recreated and re-seeded on every deploy/restart. Seeded content
+> (profile, projects, blog) always appears, but contact messages and admin
+> uploads won't persist. For persistence, attach a managed database or disk and
+> remove the auto-seed line in `docker/entrypoint.sh`. Free services also sleep
+> after inactivity and cold-start in ~30s.
+
 ## Testing
 
 ```bash

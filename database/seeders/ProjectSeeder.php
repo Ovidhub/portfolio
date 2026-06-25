@@ -21,6 +21,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['Laravel', 'PHP', 'TypeScript', 'Fintech'],
                 'icon' => 'database',
                 'color' => 'from-emerald-500 to-teal-500',
+                'image' => '/images/projects/esusu.jpg',
                 'link' => 'https://safemonic.com/',
                 'github' => '#', // private repo
             ],
@@ -31,8 +32,9 @@ class ProjectSeeder extends Seeder
                 'tags' => ['TypeScript', 'Laravel', 'Blade', 'E-Commerce'],
                 'icon' => 'shopping-cart',
                 'color' => 'from-purple-500 to-pink-500',
+                'image' => '/images/projects/material-tools.jpg',
                 'link' => 'https://hechimaterial.online/',
-                'github' => 'https://github.com/Ovidhub/Material-Tool-Ecommerce',
+                'github' => '#',
             ],
             [
                 'title' => 'Hair Salon & Beauty Store',
@@ -41,8 +43,9 @@ class ProjectSeeder extends Seeder
                 'tags' => ['HTML', 'CSS', 'JavaScript', 'Responsive'],
                 'icon' => 'palette',
                 'color' => 'from-pink-500 to-rose-500',
+                'image' => '/images/projects/hair-salon.jpg',
                 'link' => 'https://ovidhub.github.io/Hair-Salon/',
-                'github' => 'https://github.com/Ovidhub/Hair-Salon',
+                'github' => '#',
             ],
             [
                 'title' => 'Cleaning Service Website',
@@ -51,8 +54,9 @@ class ProjectSeeder extends Seeder
                 'tags' => ['HTML', 'CSS', 'JavaScript', 'Web Design'],
                 'icon' => 'layout',
                 'color' => 'from-sky-500 to-blue-500',
+                'image' => '/images/projects/cleaning-service.jpg',
                 'link' => 'https://ovidhub.github.io/cleaning-Service/',
-                'github' => 'https://github.com/Ovidhub/cleaning-Service',
+                'github' => '#',
             ],
             [
                 'title' => 'RubiVest — Investment Platform',
@@ -61,6 +65,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['Laravel', 'PHP', 'JavaScript', 'Fintech'],
                 'icon' => 'bar-chart',
                 'color' => 'from-amber-500 to-orange-500',
+                'image' => '/images/projects/rubivest.jpg',
                 'link' => 'https://rubivest.com/',
                 'github' => '#', // private repo
             ],
@@ -71,8 +76,8 @@ class ProjectSeeder extends Seeder
                 'tags' => ['Laravel', 'TypeScript', 'HTML', 'SEO'],
                 'icon' => 'code',
                 'color' => 'from-slate-600 to-slate-800',
-                'link' => 'https://de-ebrightmarn.com/',
-                'github' => 'https://github.com/Ovidhub/company-profile',
+                'link' => '#', // demo domain de-ebrightmarn.com has expired
+                'github' => '#',
             ],
         ];
 

@@ -41,7 +41,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['HTML', 'CSS', 'JavaScript', 'Responsive'],
                 'icon' => 'palette',
                 'color' => 'from-pink-500 to-rose-500',
-                'link' => '#',
+                'link' => 'https://ovidhub.github.io/Hair-Salon/',
                 'github' => 'https://github.com/Ovidhub/Hair-Salon',
             ],
             [
@@ -51,7 +51,7 @@ class ProjectSeeder extends Seeder
                 'tags' => ['HTML', 'CSS', 'JavaScript', 'Web Design'],
                 'icon' => 'layout',
                 'color' => 'from-sky-500 to-blue-500',
-                'link' => '#',
+                'link' => 'https://ovidhub.github.io/cleaning-Service/',
                 'github' => 'https://github.com/Ovidhub/cleaning-Service',
             ],
             [

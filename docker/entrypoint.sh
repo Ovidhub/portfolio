@@ -20,8 +20,12 @@ fi
 
 php artisan migrate --force
 # Seed only when the database is empty, so existing data (contact messages,
-# admin edits) is preserved across deploys on a persistent database.
+# admin edits, profile/SEO settings) is preserved across deploys.
 php artisan app:seed-if-empty
+# The project catalogue is managed in code (database/seeders/ProjectSeeder.php),
+# so re-sync it on every deploy. updateOrCreate by slug updates the listed
+# projects without touching other tables or admin-added projects.
+php artisan db:seed --class=ProjectSeeder --force
 # Keep the admin login in sync with the ADMIN_PASSWORD env var on every boot,
 # so the password can be set/changed from the dashboard without shell access.
 if [ -n "$ADMIN_PASSWORD" ]; then

@@ -15,6 +15,17 @@ class ProjectSeeder extends Seeder
         // as projects are deployed or repositories are made public.
         $projects = [
             [
+                'title' => 'REIGNITE — Sales Funnel Landing Page',
+                'description' => 'A high-converting, single-page book/course sales funnel — hero with a 3D book mockup, social proof, chapter previews, pricing tiers, a 60-day guarantee and a live countdown. Built and hosted right here on this site.',
+                'body' => "A complete sales-funnel landing page designed to turn cold traffic into buyers. It carries a visitor from a bold hero and social proof, through \"is this for you\" objections, chapter previews and reviews, into clear pricing tiers, a risk-reversal guarantee, an FAQ, and an urgency-driven countdown CTA.\n\nServer-rendered for speed and SEO with Laravel and Blade, styled with Tailwind CSS, and made interactive (accordions, mobile nav, live countdown) with Alpine.js — no heavy JavaScript framework. Every piece of copy is configurable.",
+                'tags' => ['Laravel', 'Blade', 'Tailwind CSS', 'Alpine.js'],
+                'icon' => 'layout',
+                'color' => 'from-amber-400 to-orange-500',
+                'image' => '/images/projects/funnel.jpg',
+                'link' => '/funnel',
+                'github' => '#',
+            ],
+            [
                 'title' => 'Esusu — Digital Savings & Cooperative Platform',
                 'description' => 'A digital esusu and cooperative savings platform that automates group contributions, scheduled payouts and member management for thrift groups.',
                 'body' => "Esusu is a digital take on the traditional African rotating-savings scheme. Members join a savings group, contribute on a set schedule, and receive automated payouts in turn — all tracked transparently in one place.\n\nBuilt with Laravel and TypeScript, the platform handles member onboarding, contribution tracking, automated payout rotation, wallet balances and an admin dashboard for managing groups and reconciling payments. It replaces error-prone manual record-keeping with a secure, auditable system.",

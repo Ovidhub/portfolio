@@ -87,7 +87,8 @@ class ProjectSeeder extends Seeder
                 'tags' => ['Laravel', 'TypeScript', 'HTML', 'SEO'],
                 'icon' => 'code',
                 'color' => 'from-slate-600 to-slate-800',
-                'link' => '#', // demo domain de-ebrightmarn.com has expired
+                'image' => '/images/projects/company-profile.jpg',
+                'link' => 'https://eymonkgroup.co.uk/',
                 'github' => '#',
             ],
         ];

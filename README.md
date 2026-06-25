@@ -97,6 +97,8 @@ The seeder creates an admin account:
 
 ## Deployment (Render)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ovidhub/portfolio)
+
 This repo ships with a `Dockerfile`, `docker/entrypoint.sh` and a `render.yaml`
 blueprint for one-click deployment on [Render](https://render.com).
 
